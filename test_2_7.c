@@ -386,8 +386,10 @@ void leftRound(char * src, int time)
 
 
 //int(*(*p)[10])(int*)
-#include <stdlib.h>
 
+
+//#include <stdlib.h>
+//
 //int cmp_int(const void*e1, const void* e2)
 //{
 //	return *(int*)e1 - *(int*)e2;
@@ -407,40 +409,113 @@ void leftRound(char * src, int time)
 //
 //
 //
+//
+//
+//struct Stu
+//{
+//	char name[20];
+//	int age;
+//};
+//
+//int cmp_by_name(const void*e1, const void*e2)
+//{
+//	return strcmp((char*)e1, (char*)e2);
+//}
+//
+//
+//int main()
+//{
+//	struct Stu arr[] = { { "abcd", 180 }, { "abc", 25 } };
+//
+//	qsort(arr, sizeof(arr) / sizeof(arr[0]), sizeof(arr[0]), cmp_by_name);
+//	return 0;
+//}
+//
+//
+//#include <stdio.h>
+//#include <string.h>
+//struct Stu
+//{
+//	char name[20];
+//	int age;
+//};
+//
+//int cmp_age(const void*e1, const void*e2)
+//{
+//	return strcmp(((struct Stu*)e1)->name, ((struct Stu*)e2)->name);
+//}
+//
+//void swap(char* buffer1, char* buffer2, int width)
+//{
+//	while (width--)
+//	{
+//		char tmp = *buffer1;
+//		*buffer1 = *buffer2;
+//		*buffer2 = tmp;
+//		buffer1++;
+//		buffer2++;
+//	}
+//}
+//
+//
+//
+//void bubble_sort(void* base, int sz, int width, int(*cmp)(const void*e1, const void*e2))
+//{
+//	int i = 0;
+//	int j = 0;
+//	for (i = 0; i < sz-1; i++)
+//	{
+//		for (j = 0; j < sz - 1 - i; j++)
+//		{
+//			if (cmp((char*)base + j*width, (char*)base + (j + 1)*width)>0)
+//			{
+//				swap((char*)base + j*width, (char*)base + (j + 1)*width,width);
+//			}
+//		}
+//	}
+//}
+//
+//int main()
+//{
+//	struct Stu arr[] = { { "abcd", 18 }, { "abc",18}};
+//	bubble_sort(arr, sizeof(arr) / sizeof(arr[0]), sizeof(arr[0]), cmp_age);
+//	return 0;
+//}
+//
+//int test(char a)
+//{
+//	printf("hehe");
+//	return 1;
+//}
+//int main()
+//{
+//	int(*(*p_fun)[10])(int*);
+//	int(*(p[10]))(int);
+//	p[0] = test;
+//	printf("%d", sizeof(p[0]));
+//	//(p[0])('a');
+//	return 0;
+//}
+//
+//
+//
+#include <string.h>
 
-
-struct Stu
+char* left_move(char* str, int k)
 {
-	char name[20];
-	int age;
-};
-
-int cmp_by_name(const void*e1, const void*e2)
-{
-	return strcmp((char*)e1, (char*)e2);
+	int len = strlen(str);
+	memmove(str + len, str, len);
+	*(str + k + len) = '\0';
+	return str + k;
+	
 }
-
 
 int main()
 {
-	struct Stu arr[] = { { "abcd", 180 }, { "abc", 25 } };
-
-	qsort(arr, sizeof(arr) / sizeof(arr[0]), sizeof(arr[0]), cmp_by_name);
+	char ch[] = "abcdef";//abcdefabcdef
+	char* ret=left_move(ch, 2);
+	printf("%s",ret);
 	return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
