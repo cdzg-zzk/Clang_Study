@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS  1
 
+
 #define NAME_MAX 10
 #define SEX_MAX 5
 #define TEL_MAX 12
