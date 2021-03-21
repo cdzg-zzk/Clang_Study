@@ -13,6 +13,7 @@ void CheckCapacity(struct Contact* p)
 			printf("À©ÈÝ³É¹¦\n");
 		}
 		else
+		
 		{
 			printf("Í¨Ñ¶Â¼À©ÈÝÊ§°Ü\n");
 			return;
